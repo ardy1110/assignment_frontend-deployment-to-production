@@ -15,7 +15,7 @@ const AddPhoto = () => {
       updatedAt: new Date().toString(),
       imageUrl,
       captions,
-      secret : secret,
+      secret,
     }
   
     try {
@@ -26,10 +26,10 @@ const AddPhoto = () => {
         },
         body: JSON.stringify(body)
       });
-      const json = await response.json();
-      navigate("/photos");
+
+      navigate("/photos", await response.json());
     } catch (error) {
-      // Handle error
+      setError(error);
     }
   };
 

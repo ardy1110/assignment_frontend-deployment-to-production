@@ -33,7 +33,7 @@ const Photos = () => {
   
     fetchData();
     setLoading(false);
-  }, [sort, submited]);
+  }, [sort, submited, search]);
   
   useEffect(() => {
     setLoading(true);
